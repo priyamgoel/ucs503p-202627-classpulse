@@ -54,9 +54,32 @@ Where `f` is the fraction of the time limit remaining.
 - `code/web/src/components/QuizAuthoringView.tsx`
 - `code/web/src/components/LiveQuizModal.tsx`
 - `code/web/src/components/QuizResultsDialog.tsx`
+- `code/web/src/components/PulseMeterResultsDialog.tsx`
+- `code/web/src/components/WordCloudMuteDialog.tsx`
+- `code/web/src/app/student/pulse/`
+- `code/web/src/app/student/quizzes/`
 
-## Key mobile files
+## Tests
 
-- `code/mobile/lib/screens/live_pulsemeter_screen.dart`
-- `code/mobile/lib/screens/pulsemeter_student_view.dart`
-- `code/mobile/lib/screens/live_quiz_student_screen.dart`
+- `code/backend/test/liveActivities.test.js`
+- `code/backend/test/pulsemeters.test.js`
+- `code/backend/test/quizzes.test.js`
+- `code/backend/test/profanityFilter.test.js`
+
+## Attendance-pending analytics
+
+If the attendance session for the lecture has already ended, the activity
+is linked to it and the present count is the denominator. Otherwise the
+activity is marked pending, and it is resolved and recalculated when the
+attendance session ends.
+
+## Word-cloud moderation
+
+A profanity filter blocks entries on submission. A teacher can mute a
+student from future word clouds for a set period. The mute belongs to the
+classroom and has an expiry time.
+
+## Reference
+
+See section 2.3.3 (PulseMeter Live Feedback) and 2.3.4 (Live Quiz Engine)
+of the final project report.
